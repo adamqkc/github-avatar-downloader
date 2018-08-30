@@ -9,7 +9,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     url: `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`,
     headers: {
       'User-Agent': 'request',
-      'Authorization': secrets.GITHUB_TOKEN
+      'Authorization': `token ${secrets.GITHUB_TOKEN}`
     }
   };
 
@@ -23,9 +23,6 @@ function downloadImageByURL(url, filePath) {
   request.get(url)
   .on('error', function(err) {
     throw err;
-  })
-  .on('response', function(response) {
-    console.log(response);
   })
   .pipe(fs.createWriteStream(filePath));
 }
