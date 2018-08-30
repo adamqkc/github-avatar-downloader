@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/adamqkc/github-avatar-downloader#readme",
   "dependencies": {
-    "request": "^2.87.0"
+    "dotenv": "^6.0.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {}
 }
